@@ -354,18 +354,30 @@ function endGame() {
 
 function winner() {
 
-    if (playerScore > dealerScore) {
+    if (playerScore > dealerScore && playerScore < 22) {
         console.log("Player wins!");
         winnerPane.innerText = "Player wins!";
         winnerPane.style.display = "block";
         dealerTab.style.display = "block";
     }
 
-    else if (playerScore < dealerScore) {
+    else if (playerScore > dealerScore && playerScore > 21) {
+        console.log("Player is bust!");
+        winnerPane.innerText = "Dealer wins!";
+        winnerPane.style.display = "block";
+        dealerTab.style.display = "block";
+    }
+
+    else if (playerScore < dealerScore && dealerScore < 22) {
         console.log("Dealer wins!");
         winnerPane.innerText = "Dealer wins!";
         winnerPane.style.display = "block";
         dealerTab.style.display = "block";
+    }
+    else if (playerScore < dealerScore && dealerScore > 21) {
+        console.log("Dealer is bust! Player wins!")
+        winnerPane.innerText = "Player wins!";
+        winnerPane.style.display = "block";
     }
     else {
         console.log("It's a draw - split pot!");
@@ -374,19 +386,3 @@ function winner() {
         dealerTab.style.display = "block";
     }
 }
-
-if (isDealerBust) {
-
-    winnerPane.innerText = "Player wins!";
-    dealerBust.style.display = "block";
-    dealerTab.style.display = "block";
-
-}
-
-if (isPlayerBust) {
-    winnerPane.innerText = "Dealer wins!";
-    winnerPane.display = "block";
-    playerBust.style.display = "block";
-    dealerTab.style.display = "block";
-}
-

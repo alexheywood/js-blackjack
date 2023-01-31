@@ -1,21 +1,59 @@
-body {
-    text-align: center;
-    background-color:rgb(66, 92, 21);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-    font-size: 20px;
+* {
+    margin-bottom: 2px;
 }
 
+body {
+    text-align: center;
+    background-color: #35654d;
+    font-family: 'Signika', sans-serif;
+    color: white;
+    font-size: 16px;
+}
+
+.header {
+  border: solid 5px white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  padding: 0px;
+  margin: 0px;
+  justify-tracks: start;
+}
+
+#header-wrapper {
+  
+  display: inline-flex;
+  margin: 0;
+}
 button {
 
-    border-radius: 5px;
-    text-align: center;
-    text-transform: uppercase;
-    height: 50px;
-    padding: 2px;
-    margin: 8px;
-    font-size: 20px;
-    border: 1px solid white;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #fa6400;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 5px;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: 130px;
 }
 
 
@@ -29,6 +67,10 @@ button {
     display: flex;
 }
 #winner {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     height: auto;
     color: black;
     background-color: white;
@@ -41,14 +83,12 @@ button {
 
 
 #dealer-cards {
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     display: flex;
 }
 
 #player-cards {
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     display: flex;
 }
 
@@ -91,6 +131,7 @@ li {
     margin: auto;
     text-decoration: underline;
     text-underline-offset: 5px;
+    padding-left: 40px;
 }
 
 #instructions {
@@ -106,4 +147,27 @@ li {
     font-size: 20px;
     text-underline-offset: 5px;
     text-decoration: underline;
+}
+
+
+
+button:hover,
+button:focus {
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+button:disabled {
+
+    background-color: darkgoldenrod;
 }

@@ -5,15 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
     <script src='elements.cardmeister.full.js'></script>
-    <title>BlackJack</title>
+    <title>Blackjack</title>
 </head>
 <body>
-    <h1>BlackJack</h1>
-    <div id="open-instructions">Instructions?</div>
+  <div id="header-wrapper">
+    <h1 class="header">21</h1>
+    <div id="open-instructions">How To Play</div>
+  </div>
     <div id="instructions" style="display: none;">
         <p>Beat The Dealer.</p>
-        <p>You start with two cards. The aim of the game is to have a hand as high as possible without exceeding 21.</p>
+        <p>The aim of the game is to have a hand higher than the dealers without exceeding 21.</p>
         <p>To begin you and the dealer are dealt two cards.</p>
         <p>You can "add a card" to your hand (as many times as you want) or you can "stick" to end your turn and allow the dealer to draw one card before revealing both hands.</p>
         <p>You win if your hand is closer to 21 or if the dealer's hand exceeds 21.</p>
@@ -27,7 +32,7 @@
     <div id="scoreboard">
     <div id="player-tab">
         <h3>Player</h3>
-     <p>Cards: <div id="player-cards">
+    <div id="player-cards">
         <ul id="playerCardsImageArray">
 
         </ul>
@@ -41,13 +46,13 @@
 
     <div id="dealer-tab">
         <h3>Dealer</h3>
-        <p>Cards: <div id="dealer-cards">
+        <div id="dealer-cards">
             <ul id="dealerCardsImageArray">
 
             </ul>
         </div>
         Score: <div id="dealer-score"></div></p>
-        <div id="dealer-bust" style="display: none; background-color: red; color: yellow;">Dealer is bust!</div>
+        <div id="dealer-bust" style="display: none; background-color: red; color: yellow; padding-bottom: 5px;">Dealer is bust!</div>
     </div>
 
     <div id="winner-wrapper">
@@ -56,10 +61,10 @@
 
 </div>
     <div>
-    <button id="startButton" onClick="initialDraw()">Start Game</button>
-    <button id="resetButton" onClick="reset()">Reset Game</button></div>
+    <button id="startButton" onClick="initialDraw()">Start</button>
+    <button id="resetButton" onClick="reset()">Reset</button></div>
     <div>
-    <button id="addPlayerCard" onclick="addPlayerCard()">Add Player Card</button>
+    <button id="addPlayerCard" onclick="addPlayerCard()">Twist</button>
     <button id="stickButton" onClick="stick()">Stick</button>
 
     </div>
