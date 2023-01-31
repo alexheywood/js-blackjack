@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BlackJack</title>
+</head>
+<body>
+    <h1>BlackJack</h1>
+    <hr>
+    <div id="scoreboard">
+    <div id="player-tab">
+        <h3>Player</h3>
+     <p>Cards: <div id="player-cards"></div>
+     Score: <div id="player-score"></div></p>
+     <div id="player-bust" style="display: none; background-color: red; color: yellow;">Player is bust!</div>
+     <div id="player-stick" style="display: none; background-color: gold; color: gray;">Player is sticking!</div>
+    </div>
+
+
+    <div id="dealer-tab">
+        <h3>Dealer</h3>
+        <p>Cards: <div id="dealer-cards"></div>
+        Score: <div id="dealer-score"></div></p>
+        <div id="dealer-bust" style="display: none; background-color: red; color: yellow;">Dealer is bust!</div>
+    </div>
+
+    <div id="winner-wrapper">
+    <div id="winner"></div>
+    </div>
+
+</div>
+    <div>
+    <button id="startButton" onClick="initialDraw()">Start Game</button>
+    <button id="resetButton" onClick="reset()">Reset Game</button></div>
+    <div>
+    <button id="addPlayerCard" onclick="addPlayerCard()">Add Player Card</button>
+    <button id="stickButton" onClick="stick()">Stick</button>
+
+    </div>
+
+    <script src="blackjack.js"></script>
+</body>
+</html>

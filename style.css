@@ -1,0 +1,47 @@
+body {
+    text-align: center;
+    background-color: salmon;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
+button {
+
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    height: 50px;
+    padding: 2px;
+    margin: 8px;
+    font-size: 20px;
+    border: 1px solid white;
+}
+
+
+#scoreboard {
+
+    min-height: 200px;
+}
+
+
+#winner {
+    height: 50px;
+    color: black;
+    background-color: white;
+    width: 70%;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+}
+
+
+#dealer-cards {
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+#player-cards {
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
