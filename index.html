@@ -5,15 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src='elements.cardmeister.full.js'></script>
     <title>BlackJack</title>
 </head>
 <body>
     <h1>BlackJack</h1>
+    <div id="open-instructions">Instructions?</div>
+    <div id="instructions" style="display: none;">
+        <p>Beat The Dealer.</p>
+        <p>You start with two cards. The aim of the game is to have a hand as high as possible without exceeding 21.</p>
+        <p>To begin you and the dealer are dealt two cards.</p>
+        <p>You can "add a card" to your hand (as many times as you want) or you can "stick" to end your turn and allow the dealer to draw one card before revealing both hands.</p>
+        <p>You win if your hand is closer to 21 or if the dealer's hand exceeds 21.</p>
+        <p>You lose if your hand exceeds 21 or if the dealer's hand is closer to 21.</p>
+<hr>
+        <div id="close-instructions">Close X</div>
+    </div>
+
+    <small></small>
     <hr>
     <div id="scoreboard">
     <div id="player-tab">
         <h3>Player</h3>
-     <p>Cards: <div id="player-cards"></div>
+     <p>Cards: <div id="player-cards">
+        <ul id="playerCardsImageArray">
+
+        </ul>
+        
+</div>
      Score: <div id="player-score"></div></p>
      <div id="player-bust" style="display: none; background-color: red; color: yellow;">Player is bust!</div>
      <div id="player-stick" style="display: none; background-color: gold; color: gray;">Player is sticking!</div>
@@ -22,7 +41,11 @@
 
     <div id="dealer-tab">
         <h3>Dealer</h3>
-        <p>Cards: <div id="dealer-cards"></div>
+        <p>Cards: <div id="dealer-cards">
+            <ul id="dealerCardsImageArray">
+
+            </ul>
+        </div>
         Score: <div id="dealer-score"></div></p>
         <div id="dealer-bust" style="display: none; background-color: red; color: yellow;">Dealer is bust!</div>
     </div>

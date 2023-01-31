@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: salmon;
+    background-color:rgb(66, 92, 21);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
     font-size: 20px;
@@ -24,24 +24,86 @@ button {
     min-height: 200px;
 }
 
+#winner-wrapper {
 
+    display: flex;
+}
 #winner {
-    height: 50px;
+    height: auto;
     color: black;
     background-color: white;
-    width: 70%;
     align-items: center;
     align-content: center;
     margin: auto;
+    vertical-align: middle;
+    text-transform: uppercase;
 }
 
 
 #dealer-cards {
     letter-spacing: 2px;
     margin-bottom: 20px;
+    display: flex;
 }
 
 #player-cards {
     letter-spacing: 2px;
     margin-bottom: 20px;
+    display: flex;
+}
+
+card-t img {
+    height: 90px;
+}
+
+#playerCardsImageArray {
+
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+}
+
+#dealerCardsImageArray {
+
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+}
+
+ul {
+    margin: 0px;
+    display: flex;
+    list-style: none;
+    text-align: center;
+    margin: auto;
+    padding-inline-start: 0;
+
+}
+
+li {
+    margin: auto;
+    margin: 2px;
+    padding: 0px;
+}
+
+#open-instructions {
+    height: 35px;
+    margin: auto;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+#instructions {
+
+    font-size: 14px;
+    background-color:cadetblue;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+#close-instructions {
+
+    font-size: 20px;
+    text-underline-offset: 5px;
+    text-decoration: underline;
 }

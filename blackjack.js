@@ -1,9 +1,20 @@
+/*
+
+Big thanks to https://github.com/cardmeister/cardmeister.github.io for the semantic, 
+easy to use custom HTML element script. This made it so easy, again thanks!
+
+*/
+
+
 let playerScore;
 let dealerScore;
 let dealerCardsSecond = [];
 let playerCardsSecond = [];
 let playerCards = [];
 let dealerCards = [];
+
+let playerCardImages = [];
+let dealerCardImages = [];
 
 const playerBust = document.getElementById("player-bust");
 const dealerBust = document.getElementById("dealer-bust");
@@ -18,9 +29,16 @@ const dealerScoreCard = document.getElementById("dealer-score");
 const playerShowCards = document.getElementById("player-cards");
 const dealerShowCards = document.getElementById("dealer-cards");
 const dealerTab = document.getElementById("dealer-tab");
+const playerCardsImages = document.getElementById("playerCardsImageArray");
+const dealerCardsImages = document.getElementById("dealerCardsImagesArray");
 
 let isPlayerBust;
 let isDealerBust;
+
+const instructionOpen = document.getElementById("open-instructions");
+const instruction = document.getElementById("instructions");
+const instructionClose = document.getElementById("close-instructions");
+
 
 
 window.addEventListener("load", (initiate) => {
@@ -44,14 +62,78 @@ function drawCard() {
 
 }
 
+function randomSuit() {
+
+    let suit = Math.floor(Math.random() * 4) + 1;
+
+    return suit;
+
+}
+
+
+instructionOpen.addEventListener("click", function() {
+
+    instruction.style.display = "block";
+    instructionOpen.style.display = "none";
+
+});
+
+instructionClose.addEventListener("click", function() {
+
+    instruction.style.display = "none";
+    instructionOpen.style.display = "block";
+
+});
+
+
+function addPlayerCardImage() {
+
+    
+    let string = '<ul>';
+
+    for (let i = 0; i < playerCards.length; i++) {
+
+        string += `<li><card-t rank="${playerCards[i]}" suit="${randomSuit()}"></card-t></li>`;
+
+        playerShowCards.innerHTML = string;
+    }
+
+    string += '</ul>';
+
+}
+
+
+function addDealerCardImage() {
+
+    
+    let string = '<ul>';
+
+    for (let i = 0; i < dealerCards.length; i++) {
+
+        string += `<li><card-t rank="${dealerCards[i]}" suit="${randomSuit()}"></card-t></li>`;
+
+        dealerShowCards.innerHTML = string;
+    }
+
+    string += '</ul>';
+
+}
+
+
 function updateScoreCard() {
+
     playerScoreCard.innerText = playerScore;
     dealerScoreCard.innerText = dealerScore;
 
     dealerCardsSecond = dealerCards.map(String);
+
     dealerShowCards.innerText = dealerCardsSecond;
+
     playerCardsSecond = playerCards.map(String);
     playerShowCards.innerText = playerCardsSecond;
+
+    addPlayerCardImage()
+    addDealerCardImage()
 }
 
 function initialDraw() {
@@ -92,7 +174,9 @@ function initialDraw() {
     addPlayerCardButton.disabled = false;
     startButton.disabled = true;
     stickButton.disabled = false;
-    
+    addPlayerCardImage()
+    addDealerCardImage()
+
 }
 
 
@@ -104,7 +188,7 @@ function calculatePlayerScore() {
 
         if (playerCards[i] === "A") {
 
-            score += 11;
+            score += 1;
 
         }
 
@@ -145,7 +229,7 @@ function calculateDealerScore() {
 
         if (dealerCards[i] === "A") {
 
-            score += 11;
+            score += 1;
 
         }
 
@@ -229,7 +313,7 @@ function reset() {
     playerBust.style.display = "none";  
     playerStick.style.display = "none";  
 
-    
+     
     resetButton.disabled = true;
     addPlayerCardButton.disabled = true;
     startButton.disabled = false;
@@ -248,7 +332,13 @@ function stick() {
     addPlayerCardButton.disabled = true;
     stickButton.disabled = true;
     startButton.disabled = true;
+
     dealerScore = calculateDealerScore();
+
+    while (dealerScore < 15) {
+        addDealerCard();
+        dealerScore = calculateDealerScore();
+    }
 
     winner();
 }
@@ -281,6 +371,7 @@ function winner() {
         console.log("It's a draw - split pot!");
         winnerPane.innerText = "It's a draw - split the pot!";
         winnerPane.style.display = "block";
+        dealerTab.style.display = "block";
     }
 }
 
